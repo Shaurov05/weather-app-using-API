@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="jumbotron">
+
+    {% if api %}
+      {% if api == "Error...." %}
+        <h2>Please reload or try again later! Server might be busy.</h2>
+
+      {% else %}
+        <h1> {{ api.0.Category.Name }}</h1>
+        <p> {{api.0.ReportingArea}} Air Quality: {{ api.0.AQI }}</p>
+
+        <p>Description: {{category_description}}</p>
+        <p>Date: {{api.0.DateObserved}}</p>
+        <p>Latitude: {{api.0.Latitude}}</p>
+        <p>Latitude: {{api.0.Longitude}}</p>
+
+        <p>AQI (Air quality index): {{api.1.AQI}} </p>
+
+
+
+        <h5>Signal : <button class="{{category_color}}" type="button" name="{{api.0.Category.Name}}">{{api.0.Category.Name}}</button> </h5>
+
+      {% endif %}
+
+    {% else %}
+      <h2>Didn't found zipcode, please try another!</h2>
+    {% endif %}
+
+
+  </div>
+</div>
+
+{% endblock %}

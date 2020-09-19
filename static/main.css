@@ -1,0 +1,25 @@
+
+
+.Good{
+  background-color: #0c0;
+}
+
+.Moderate {
+  background-color: #FFFF00;
+}
+
+.USG {
+  background-color: #FF9900;
+}
+
+.Unhealthy {
+  background-color: #FF0000;
+}
+
+.Very-Unhealthy {
+  background-color: #990066;
+}
+
+.Hazardous {
+  background-color: #660000;
+}
